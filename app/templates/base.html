@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='base.css')}}">
+    {% block css%}{% endblock %}
+    <title>{% block title %}{% endblock %} - Mailer</title>
+</head>
+<body>
+    <nav>
+        <div class="navTitle">
+            Mail<span>er</span>
+        </div>
+    </nav>
+    <div class="divFilter">
+        <form method="GET">
+            <input name="search" type="text" id="search" placeholder="¿Quieres buscar algo?...">
+        </form>
+        {% block button %}{% endblock %}
+    </div>
+
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+
+    {% with messages = get_flashed_messages() %}          
+    {% for message in messages %}
+    <div class="flash">
+        {{message}}
+    </div>
+    {% endfor %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+</body>
+</html>

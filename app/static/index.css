@@ -1,0 +1,40 @@
+ul{
+    list-style: none;
+}
+
+.mail{
+    background-color: #fff;
+    border-radius: 1vh;
+    padding: 1vh 1.5vw;
+    margin-right: 5vw;
+    margin-bottom: 3vh;
+}
+.mail .flexData {
+    background-color: inherit;
+    display: flex;
+    flex-flow: row nowrap;
+    text-align: center;
+    justify-content: flex-start;
+    height: max-content;
+}
+.mail div span {
+    background-color: inherit;
+}
+.mail div .email {
+    color: #674dd4;
+    margin-bottom: 1vh;
+    margin-right: 1vw;
+}
+.mail div .subject {
+    margin-bottom: 1vh;
+}
+.mail p {
+    background-color: inherit;
+    margin-top: 1vh;
+}
+
+.mail hr{
+    border: none;
+    height: 1px;
+    background-color: #eee;
+}

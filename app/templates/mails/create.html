@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{url_for('static', filename='create.css')}}">
+{% endblock %}
+
+{% block header %}
+    <h1>
+        {% block title %}Enviar correo{% endblock %}
+    </h1>
+{% endblock %} 
+
+{% block button %}
+    <a class="buttonBlueViolet" href="{{  url_for('mail.index')  }}">volver</a>
+{% endblock %}
+
+
+
+{% block content %}
+    <form method="post">
+        <div class="formGroup">
+            <Label for="email">correo</Label>
+            <input name="email" type="text" id="email" placeholder="Correo...">
+        </div>
+        <div class="formGroup">
+            <Label for="subject">asunto</Label>
+            <input name="subject" type="text" id="subject" placeholder="Asunto...">
+        </div>
+        <div class="formGroup">
+            <Label for="content">contenido</Label>
+            <textarea name="content" id="content" placeholder="Contenido..."></textarea>
+        </div>
+        <div class="formGroup">
+            <input class="buttonBlueViolet send" type="submit" value="Enviar">
+        </div>
+        
+    </form>
+
+{% endblock %}

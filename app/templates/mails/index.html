@@ -1,0 +1,28 @@
+{%  extends 'base.html'  %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+{% endblock %}
+
+{% block header %}
+    <h1>
+        {% block title %}Correos enviados{% endblock %}
+    </h1>
+{% endblock %} 
+{% block button %}
+    <a class="buttonBlueViolet" href="{{  url_for('mail.create')  }}">nuevo comentario</a>
+{% endblock %}
+{% block content %}
+<ul>
+    {% for mail in mails %}
+        <li class="mail">
+            <div class="flexData">
+                <span class="email">{{ mail.email }}</span>
+                <span class="subject">{{ mail.subject }}</span>
+            </div>
+            <hr>    
+            <p class="content">{{ mail.content }}</p>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
