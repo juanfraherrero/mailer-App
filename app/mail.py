@@ -18,6 +18,7 @@ def index():
     else:
         data = c.execute("SELECT * FROM email WHERE content like %s", ('%' + search + '%', ))
     mails = c.fetchall()
+
     return render_template("mails/index.html", mails=mails)
 
 @bp.route("/create", methods=["GET", "POST"])
