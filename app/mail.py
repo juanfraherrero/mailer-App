@@ -6,7 +6,7 @@ from . import db
 import os
 import sendgrid
 from sendgrid.helpers.mail import *
-import json
+
 bp = Blueprint('mail', __name__, url_prefix="/" )
 
 @bp.route("/", methods=["GET"])
